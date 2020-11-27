@@ -14,6 +14,18 @@ DATABASES = {
 '''
 
 class Item(models.Model):   #Primary Key is not given, django will generate filed ID automatically for us 
+    
+    #! add a function so under python shell
+    #! command Item.objects.all() will not juz show numbers of objects in the table only
+    #! so can show the name of object too
+    def __str__(self):
+        #return self.item_name,self.item_desc,self.item_price
+        #! 不可以這樣用
+        #! TypeError: __str__ returned non-string (type tuple)
+        #? cannt show more than one variable if using __str__
+        return self.item_name
+
+
     item_name = models.CharField(max_length=200)
     item_desc = models.CharField(max_length=200)
     item_price = models.IntegerField()
