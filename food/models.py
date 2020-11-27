@@ -13,7 +13,7 @@ DATABASES = {
 }
 '''
 
-class Item_table(models.Model):   #Primary Key is not given, django will generate filed ID automatically for us 
+class Item(models.Model):   #Primary Key is not given, django will generate filed ID automatically for us 
     item_name = models.CharField(max_length=200)
     item_desc = models.CharField(max_length=200)
     item_price = models.IntegerField()
