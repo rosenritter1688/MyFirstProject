@@ -29,8 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#! app with database required
+#todo go to "C:\Users\Bruce Ashbee\Documents\MyFirstProject\food\apps.py" copy FoodConfig  as line 35
 INSTALLED_APPS = [
+    'food.apps.FoodConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
