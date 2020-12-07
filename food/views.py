@@ -25,7 +25,7 @@ def helloworld(request):#request from the user
     #* MyFirstProject\food\templates\food\index.html
     context ={
         "item_list_pass2template" : item_list,
-    }   #name a variable item_list2 and = item_list
+    }   #name a variable item_list_pass2template for passing data to template
         #pass item_list2 to \MyFirstProject\food\templates\food\index.html
         # for looping
     return HttpResponse(template.render(context,request)) # display item_list
