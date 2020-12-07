@@ -24,7 +24,7 @@ def helloworld(request):#request from the user
     #* tell django where to location the template
     #* MyFirstProject\food\templates\food\index.html
     context ={
-        "item_list3" : item_list,
+        "item_list_pass2template" : item_list,
     }   #name a variable item_list2 and = item_list
         #pass item_list2 to \MyFirstProject\food\templates\food\index.html
         # for looping
