@@ -18,7 +18,7 @@ class Item(models.Model):   #Primary Key is not given, django will generate file
     #! add a function so under python shell
     #! command Item.objects.all() will not juz show numbers of objects in the table only
     #! so can show the name of object too
-    def __str__(self):
+    def __str__(self):   #? so when we 在python shell(12.sehll save object)打Item.objects.all 才可查有多少object 在table "Item"裡面
         #return self.item_name,self.item_desc,self.item_price
         #! 不可以這樣用
         #! TypeError: __str__ returned non-string (type tuple)

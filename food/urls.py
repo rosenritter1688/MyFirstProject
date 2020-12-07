@@ -14,10 +14,6 @@ urlpatterns = [
 ##C:\Users\Bruce Ashbee\Documents\MyFirstProject\MyFirstProject\urls.py
 ##
 
-#? 
-
-
-
 #urlpatterns = [
 #    path('', views.helloworld,name='helloworld'),     #in views.py use function helloworld 
 #]

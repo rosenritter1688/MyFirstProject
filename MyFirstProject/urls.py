@@ -17,5 +17,25 @@ from django.contrib import admin
 from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('food/', include('food.urls')), #! path('food/',include('food.urls')),  告知要查app [food]的urls.py 來看網址
+    path('', include('food.urls')), #! path('food/',include('food.urls')),  告知要查app [food]的urls.py 來看網址
 ]
+#! path('', include('food.urls')),
+#? if http://127.0.0.1:8000/ will look for urls.py under food app
+#! the main point is path(''
+"""
+from . import views #     . means current directory     <import views.py>
+from django.urls import path
+
+
+urlpatterns = [
+    path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
+    path('item/',views.item,name='item'),
+]
+"""
+#? what will works now is http://127.0.0.1:8000/hello/
+#?                        http://127.0.0.1:8000/item/
+
+#! if i set path('food', include('food.urls')),
+#! what will works now is http://127.0.0.1:8000/food/hello/
+#!                        http://127.0.0.1:8000/food/item/ 
+
