@@ -3,7 +3,7 @@ from django.db import models
 #! these models define which columns the table would have what would be the name of the table what would
 #! be the multiple fields inside the table and the data types as well.
 # Create your models here.
-#todo go to setting.py look for  database and change the database that you wanna use
+#? go to setting.py look for  database and change the database that you wanna use
 '''
 DATABASES = {
     'default': {
