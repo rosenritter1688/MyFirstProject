@@ -20,19 +20,34 @@ urlpatterns = [
 def helloworld(request):#request from the user
     item_list = Item.objects.all()   
     ## retrieving all objects from table "Item" > item_list
-    template = loader.get_template("food/index.html")
+    #template = loader.get_template("food/index.html") #not using coz of using render
+    #! line 23 is not needed coz we use render at the line 36,
+    #! if wanna use line 23, line 37 is needed and line 33 is not required anymore
     #* tell django where to location the template
     #* MyFirstProject\food\templates\food\index.html
     context ={
         "item_list_pass2template" : item_list,
     }   #name a variable item_list_pass2template for passing data to template
         #pass item_list2 to \MyFirstProject\food\templates\food\index.html
-        # for looping
-    return HttpResponse(template.render(context,request)) # display item_list
-    ##                 ##PizzaBurgerBurritofrench fries
-                       #* not in readable format
-                       #* so we shall use TEMPLATE to display 
+    return render(request,"food/index.html",context)
+                  #pass the request
+                           #the location of template
+                                            #pass the context
+    #return HttpResponse(template.render(context,request)) # display item_list
+    #! we can use render instead of using Http HttpResponse
+    ##                 
+    #! context is set to empty
+    #!    context ={
+    #!   
+    #!
+    ##PizzaBurgerBurritofrench fries 
+    #* not in readable format
+    #* so we shall use TEMPLATE to display 
+    #! context is used for passing data from database to template
+                       
+                       
 #http://127.0.0.1:8000/item/
 def item(request):
      return HttpResponse('<h1>This is an item view</h1>')
 
+### 
