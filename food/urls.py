@@ -6,8 +6,8 @@ urlpatterns = [
     path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
     path('item/',views.item,name='item'),
 ]
-#! #http://127.0.0.1:8000/food/hello
-#! #http://127.0.0.1:8000/food/item
+#! #http://127.0.0.1:8000/hello
+#! #http://127.0.0.1:8000/item
 
 #! 前面有宣告過告知default urls連到這邊來所以這個就不用打
 ##django has no obligation to look at this file, django will only look at the urls.py which in in the prokect folder "MyFirstProject"
