@@ -22,11 +22,12 @@ def helloworld(request):#request from the user
     ## retrieving all objects from table "Item" > item_list
     template = loader.get_template("food/index.html")
     #* tell django where to location the template
-    #* C:\Users\Bruce Ashbee\Documents\MyFirstProject\food\templates\food\index.html
+    #* MyFirstProject\food\templates\food\index.html
     context ={
-        "item_list" : item_list,
-
-    }
+        "item_list3" : item_list,
+    }   #name a variable item_list2 and = item_list
+        #pass item_list2 to \MyFirstProject\food\templates\food\index.html
+        # for looping
     return HttpResponse(template.render(context,request)) # display item_list
     ##                 ##PizzaBurgerBurritofrench fries
                        #* not in readable format
