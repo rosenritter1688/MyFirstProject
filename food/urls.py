@@ -3,19 +3,23 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
+    #http://127.0.0.1:8000/hello/
+    path('food/', views.foods,name='foods'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
+    #http://127.0.0.1:8000/item/
     path('item/',views.item,name='item'),
-]
-#! #http://127.0.0.1:8000/hello
-#! #http://127.0.0.1:8000/item
-
+    #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
+    path('item/<int:item_id>',views.detail,name="detail"),
+]               #! str tried also worked
+                #! 
 #! 前面有宣告過告知default urls連到這邊來所以這個就不用打
-##django has no obligation to look at this file, django will only look at the urls.py which in in the prokect folder "MyFirstProject"
+##django has no obligation to look at this file, django will only look 
+# at the urls.py which in in the prokect folder "MyFirstProject"
 ##C:\Users\Bruce Ashbee\Documents\MyFirstProject\MyFirstProject\urls.py
-##
-
-#urlpatterns = [
-#    path('', views.helloworld,name='helloworld'),     #in views.py use function helloworld 
-#]
-#!http://127.0.0.1:8000/
-#? 不可以路徑放空的會有page not found的問題!!!，雖然課程有這樣打
+#
+#* from MyFirstProject\urls.py
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include('food.urls')), #! path('food/',include('food.urls')),  告知要查app [food]的urls.py 來看網址
+# ]   #?path(''  >> 網址後面是空個的話 <http://127.0.0.1:8000/>
+      #? 取找food app裡面的urls.py
+      #?也可以不要設定是空的

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 #? for retriving data for simplest way
-from .models import Item  ##load Item table from models.py
+from .models import Item_frm_model  ##load Item table from models.py
 #? from models.py under current folder 
 #? import Item table
 
@@ -17,8 +17,9 @@ urlpatterns = [
 #food/urls.py
 #path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
 #http://127.0.0.1:8000/hello/
-def helloworld(request):#! accept request from the user
-    item_list = Item.objects.all()   
+def foods(request):#! accept request from the user
+    item_list = Item_frm_model.objects.all()   
+              #!Item from models
     ## retrieving all objects from table "Item" > item_list
     #template = loader.get_template("food/index.html") #not using coz of using render
     #! line 23 is not needed coz we use render at the line 36,
@@ -50,4 +51,10 @@ def helloworld(request):#! accept request from the user
 def item(request):
      return HttpResponse('<h1>This is an item view</h1>')
 
-def detail(request,item_id)
+def detail(request,item_id):#accept request
+    item = Item_frm_model.objects.get(pk=item_id) #accept item_id <PK> to collect all detail data
+    context = {
+        'item' : item,
+    }
+    return render(request,"food/detail.html",context)
+    #* now got to food/urls to create PATH of the view

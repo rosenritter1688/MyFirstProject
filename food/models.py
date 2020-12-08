@@ -13,8 +13,7 @@ DATABASES = {
 }
 '''
 
-class Item(models.Model):   #Primary Key is not given, django will generate filed ID automatically for us 
-    
+class Item_frm_model(models.Model):   #Primary Key is not given, django will generate filed ID automatically for us 
     #! add a function so under python shell
     #! command Item.objects.all() will not juz show numbers of objects in the table only
     #! so can show the name of object too
