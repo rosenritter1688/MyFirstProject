@@ -17,7 +17,7 @@ urlpatterns = [
 #food/urls.py
 #path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
 #http://127.0.0.1:8000/hello/
-def helloworld(request):#request from the user
+def helloworld(request):#! accept request from the user
     item_list = Item.objects.all()   
     ## retrieving all objects from table "Item" > item_list
     #template = loader.get_template("food/index.html") #not using coz of using render
@@ -50,4 +50,4 @@ def helloworld(request):#request from the user
 def item(request):
      return HttpResponse('<h1>This is an item view</h1>')
 
-### 
+def detail(request,item_id)
