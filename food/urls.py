@@ -1,12 +1,15 @@
 from . import views #     . means current directory     <import views.py>
 from django.urls import path
-
-
+#*Namespacing
+#* in case of your co-workers name their URLs as same asa your
+#* in this project we named 3 url page as item, show, detail
+#* even other ppl name the same name as we did Django will not confuss
+app_name = "nameURL_4_nameSpacing_frm_urls-py"
 urlpatterns = [
     #http://127.0.0.1:8000/item/
     path('item/', views.item,name='item'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
-    #http://127.0.0.1:8000/item-test/
-    path('show/', views.show,name='show'),
+    #http://127.0.0.1:8000/
+    path('', views.show,name='show'),
     #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
     path('<int:item_id_frm_views_from_def_detail>/', views.detail,name="detail"),
 ]       #! use str tried also worked

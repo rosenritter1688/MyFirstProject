@@ -14,9 +14,9 @@
         <ul>
             <li>
                 <!--line 17  /item/   its a hard code URLs   look at line 20 to change it and get name of URLs from urls.py-->   
-                <a href="/item/{{item_frm_index_html.id }}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}
+                <!--<a href="/item/{{item_frm_index_html.id }}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}</a>-->
                                                  <!--get id from item table --> 
-                <!--<a href="{% url 'detail' item_frm_index_html.id %}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}    <!--get item_name from item table-->
+                <a href="{% url 'nameURL_4_nameSpacing_frm_urls-py:detail' item_frm_index_html.id %}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}  <!--get item_name from item table-->
                     <!--  look for urls.py a URL name detail -->
                                       <!--item_frm_index_html.id   is the PK from item table-->
             </li>
