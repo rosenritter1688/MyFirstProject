@@ -8,7 +8,7 @@ urlpatterns = [
     #http://127.0.0.1:8000/item-test/
     #path('item-test/', views.item,name='item'),
     #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
-    path('<int:item_id>/', views.detail,name="detail"),
+    path('<int:item_id_frm_views_from_def_detail>/', views.detail,name="detail"),
 ]               #! use str tried also worked
                 #! <str:item_id>
 #! 前面有宣告過告知default urls連到這邊來所以這個就不用打

@@ -51,10 +51,11 @@ def item(request):#! accept request from the user
 # def item(request):
 #      return HttpResponse('<h1>This is an item view</h1>')
 
-def detail(request,item_id):#accept request
-    item = Item_frm_model.objects.get(pk=item_id) #accept item_id <PK> to collect all detail data
+def detail(request,item_id_frm_views_from_def_detail):#accept request
+    item = Item_frm_model.objects.get(pk=item_id_frm_views_from_def_detail) #accept item_id <PK> to collect all detail data
     context = {
-        'item' : item,
+        'item_list_frm_views_frm_def_detail' : item,
     }
     return render(request,"food/detail.html",context)
+    #*                    template folder food\templates\food\detail.html
     #* now got to food/urls to create PATH of the view
