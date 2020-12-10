@@ -7,13 +7,13 @@
 </head>
 <body>
     <h1>item views wiht details link</h1>
-    {% for item in item_list_frm_views_pass2template %}
+    {% for item_frm_index_html in item_list_frm_views_pass2template %}
     <!--item_list_pass2template is from MyFirstProject\food\views.py-->
     <!--  for loop -->
     <!-- remeber to keep a space after %-->
         <ul>
             <li>
-                <a href="/item/{{item.id }}"> {{item.id }} -- {{ item.item_name }}</a>
+                <a href="/item/{{item_frm_index_html.id }}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}</a>
                 <!--get id from item table --> 
                 <!--get item_name from item table-->
             </li>
