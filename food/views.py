@@ -17,7 +17,7 @@ urlpatterns = [
 #food/urls.py
 #path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
 #? http://127.0.0.1:8000/item/
-def foods(request):#! accept request from the user
+def item(request):#! accept request from the user
     item_list = Item_frm_model.objects.all()   
               #!Item from models
     ## retrieving all objects from table "Item" > item_list
@@ -48,8 +48,8 @@ def foods(request):#! accept request from the user
                        
                        
 #? http://127.0.0.1:8000/item-test/
-def item(request):
-     return HttpResponse('<h1>This is an item view</h1>')
+# def item(request):
+#      return HttpResponse('<h1>This is an item view</h1>')
 
 def detail(request,item_id):#accept request
     item = Item_frm_model.objects.get(pk=item_id) #accept item_id <PK> to collect all detail data
