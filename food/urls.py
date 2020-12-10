@@ -4,9 +4,9 @@ from django.urls import path
 
 urlpatterns = [
     #http://127.0.0.1:8000/hello/
-    path('food/', views.foods,name='foods'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
+    path('item/', views.foods,name='foods'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
     #http://127.0.0.1:8000/item/
-    path('item/',views.item,name='item'),
+    path('item-test/', views.item,name='item'),
     #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
     path('item/<int:item_id>',views.detail,name="detail"),
 ]               #! use str tried also worked

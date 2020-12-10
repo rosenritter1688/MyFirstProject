@@ -16,7 +16,7 @@ urlpatterns = [
 '''
 #food/urls.py
 #path('hello/', views.helloworld,name='helloworld'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
-#http://127.0.0.1:8000/hello/
+#? http://127.0.0.1:8000/item/
 def foods(request):#! accept request from the user
     item_list = Item_frm_model.objects.all()   
               #!Item from models
@@ -27,10 +27,10 @@ def foods(request):#! accept request from the user
     #* tell django where to location the template
     #* MyFirstProject\food\templates\food\index.html
     context ={
-        "item_list_pass2template" : item_list,
+        "item_list_frm_views_pass2template" : item_list,
     }   #name a variable item_list_pass2template for passing data to template
         #pass item_list2 to \MyFirstProject\food\templates\food\index.html
-    return render(request,"food/index.html",context)
+    return render(request,"food/index.html",context) #! pass to template food/index.html
                   #pass the request
                            #the location of template
                                             #pass the context
@@ -47,7 +47,7 @@ def foods(request):#! accept request from the user
     #! context is used for passing data from database to template
                        
                        
-#http://127.0.0.1:8000/item/
+#? http://127.0.0.1:8000/item-test/
 def item(request):
      return HttpResponse('<h1>This is an item view</h1>')
 
