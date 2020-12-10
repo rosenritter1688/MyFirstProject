@@ -13,10 +13,9 @@
     <!-- remeber to keep a space after %-->
         <ul>
             <li>
-                <!--<a href 超連結設定-->
-                <a href="/item/{{ item.id }}">{{ item.id }} -- {{ item.item_name }}</a>
-                                              <!--get id from item table --> 
-                                              <!--get item_name from item table-->
+                <a href="/item/{{item.id }}"> {{item.id }} -- {{ item.item_name }}</a>
+                <!--get id from item table --> 
+                <!--get item_name from item table-->
             </li>
         </ul>
     {% endfor %}
