@@ -48,8 +48,8 @@ def item(request):#! accept request from the user
                        
                        
 #? http://127.0.0.1:8000/item-test/
-# def item(request):
-#      return HttpResponse('<h1>This is an item view</h1>')
+def show(request):
+    return HttpResponse('<h1>This is an item view</h1>')
 
 def detail(request,item_id_frm_views_from_def_detail):#accept request
     item = Item_frm_model.objects.get(pk=item_id_frm_views_from_def_detail) #accept item_id <PK> to collect all detail data

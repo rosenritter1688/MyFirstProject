@@ -6,11 +6,11 @@ urlpatterns = [
     #http://127.0.0.1:8000/item/
     path('item/', views.item,name='item'),     #in views.py use function helloworld #! 需要告知default urls連到這邊來
     #http://127.0.0.1:8000/item-test/
-    #path('item-test/', views.item,name='item'),
+    path('show/', views.show,name='show'),
     #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
     path('<int:item_id_frm_views_from_def_detail>/', views.detail,name="detail"),
-]               #! use str tried also worked
-                #! <str:item_id>
+]       #! use str tried also worked
+        #! <str:item_id_frm_views_from_def_detail>
 #! 前面有宣告過告知default urls連到這邊來所以這個就不用打
 ##django has no obligation to look at this file, django will only look 
 # at the urls.py which in in the prokect folder "MyFirstProject"
