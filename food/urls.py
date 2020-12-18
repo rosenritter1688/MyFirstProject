@@ -1,5 +1,10 @@
 from . import views #     . means current directory     <import views.py>
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
 #*Namespacing
 #* in case of your co-workers name their URLs as same asa your
 #* in this project we named 3 url page as item, show, detail
@@ -12,7 +17,8 @@ urlpatterns = [
     path('', views.show,name='show'),
     #http://127.0.0.1:8000/item/1    1 is item_id cant ba any # in the table
     path('<int:item_id_frm_views_from_def_detail>/', views.detail,name="detail"),
-]       #! use str tried also worked
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        #! use str tried also worked
         #! <str:item_id_frm_views_from_def_detail>
 #! 前面有宣告過告知default urls連到這邊來所以這個就不用打
 ##django has no obligation to look at this file, django will only look 
@@ -26,3 +32,5 @@ urlpatterns = [
 # ]   #?path(''  >> 網址後面是空個的話 <http://127.0.0.1:8000/>
       #? 取找food app裡面的urls.py
       #?也可以不要設定是空的
+
+#urlpatterns += staticfiles_urlpatterns()

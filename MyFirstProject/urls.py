@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.urls import path
+from django.conf import settings
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('food.urls')), #! path('food/',include('food.urls')),  告知要查app [food]的urls.py 來看網址
-]
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #! path('', include('food.urls')),
 #? if http://127.0.0.1:8000/ will look for urls.py under food app
 #! the main point is path(''
