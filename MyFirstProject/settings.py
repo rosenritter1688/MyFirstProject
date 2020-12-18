@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os #*for CSS
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,3 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static",
+                               '/var/www/static/',
+                               'static',
+                    ]
+VENV_PATH = os.path.dirname(BASE_DIR)
+#STATIC_ROOT = os.path.join(VENV_PATH, "C:\\Users\\Bruce Ashbee\\Documents\\MyFirstProject\\static\\")
+

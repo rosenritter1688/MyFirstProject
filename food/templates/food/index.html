@@ -1,19 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{ % static 'food/style.css' % }">
 </head>
 <body>
-    <h1>item views wiht details link</h1>
+    <h1>item views with details link</h1>
     {% for item_frm_index_html in item_list_frm_views_pass2template %}
     <!--item_list_pass2template is from MyFirstProject\food\views.py-->
     <!--  for loop -->
     <!-- remeber to keep a space after %-->
         <ul>
             <li>
-                <!--line 17  /item/   its a hard code URLs   look at line 20 to change it and get name of URLs from urls.py-->   
+                <!--line 19  /item/   its a hard code URLs   look at line 20 to change it and get name of URLs from urls.py-->   
                 <!--<a href="/item/{{item_frm_index_html.id }}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}</a>-->
                                                  <!--get id from item table --> 
                 <a href="{% url 'nameURL_4_nameSpacing_frm_urls-py:detail' item_frm_index_html.id %}"> {{item_frm_index_html.id }} -- {{ item_frm_index_html.item_name }}  <!--get item_name from item table-->
